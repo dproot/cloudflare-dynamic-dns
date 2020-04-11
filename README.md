@@ -19,12 +19,18 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 **Create** the A-record in CF named "dynamic".
 
 **Create** the CNAME alias (example.com --> dynamic.example.com) 
+- Type: A     |  Name: dynamic          | Value: “your WAN IP” ***
+- Type: CNAME |  Name: “yourdomain.xyz” | Value: dynamic.”yourdomain.xyz”
+
+CNAME is an option, you can also use router.yourdomain.xyz
 
 ![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cf.png)
 
-**Fetch** The A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
+**Edit** the scripts with your own Zone ID,  Authorization key and A-record ID
 
-**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job `* * * * *    /.../cloudflare-ddns.sh`
+**Fetch** the A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
+
+**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) on a server or router as a cron job `* * * * *    /.../cloudflare-ddns.sh`
 
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
