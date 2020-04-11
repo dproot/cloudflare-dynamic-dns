@@ -8,5 +8,5 @@
 
 curl -X GET "https://api.cloudflare.com/client/v4/zones/**Zone ID**/dns_records?type=A" \
      -H "X-Auth-Email: example@example.com" \
-     -H "X-Auth-Key: "**Authorization key**" \
+     -H "X-Auth-Key: **Authorization key**" \
      -H "Content-Type: application/json"
