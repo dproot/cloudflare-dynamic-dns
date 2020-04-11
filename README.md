@@ -1,5 +1,3 @@
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cloudflare-dns.png)
-
 Cloudflare DDNS curl scripts that call CF-API (v4) ***directly***.
 
 My third-party DDNS service stopped working recently with CF.
@@ -28,9 +26,9 @@ CNAME is an option, you can also use router.yourdomain.xyz
 
 **Edit** the scripts with your own Zone ID,  Authorization key and A-record ID
 
-**Fetch** the A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
+**Fetch** the A-record ID with cloudflare-dns-id.sh
 
-**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) on a server or router as a cron job `* * * * *    /.../cloudflare-ddns.sh`
+**Run** cloudflare-ddns.sh a server or router as a cron job
 
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
