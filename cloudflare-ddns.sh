@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/bin/sh
 
 AUTH_EMAIL=example@example.com
 AUTH_KEY=** CF Authorization  key **
