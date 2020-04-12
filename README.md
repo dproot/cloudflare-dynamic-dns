@@ -1,3 +1,5 @@
+**The scripts are modified a bit in order to work on DD-WRT **
+
 Cloudflare DDNS curl scripts that call CF-API (v4) ***directly***.
 
 My third-party DDNS service stopped working recently with CF.
@@ -22,13 +24,19 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 
 CNAME is an option, you can also use router.yourdomain.xyz
 
-![alt text](https://raw.githubusercontent.com/dproot/cloudflare-dynamic-dns/master/img/cf.png)
 
 **Edit** the scripts with your own Zone ID,  Authorization key and A-record ID
 
 **Fetch** the A-record ID with cloudflare-dns-id.sh
 
-**Run** cloudflare-ddns.sh a server or router as a cron job
+**Run** cloudflare-ddns.sh on a server as a cron job. 
+
+For DD-WRT, place the scripts on /jffs, then assign permission by chmod 0755.
+Administration -> Management -> Cron
+  Cron                    Enabled
+  Additional Cron Jobs:
+                          */10 * * * * root /jffs/cloudflare-ddns.sh
+
 
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
@@ -46,5 +54,3 @@ The cron job will change the A-record to your webserver IP address on it's next 
 * Convert curl from linux bash script to other platforms.
 
 **DO NOT** commit your Authorization key to GitHub - thar be dragons. Purge any such commits and change your key.
-
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/dragon-key.png)
