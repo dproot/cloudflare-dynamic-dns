@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/bin/sh
 #Script to fetch your CF "dynamic" A-record ID
 #You need the Zone ID, Authorization key and A-record ID for your domain.
 #Fetch the first two from your CF account.
