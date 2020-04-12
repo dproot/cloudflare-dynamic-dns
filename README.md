@@ -22,7 +22,7 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 
 CNAME is an option, you can also use router.yourdomain.xyz
 
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cf.png)
+![alt text](https://raw.githubusercontent.com/dproot/cloudflare-dynamic-dns/master/img/cf.png)
 
 **Edit** the scripts with your own Zone ID,  Authorization key and A-record ID
 
